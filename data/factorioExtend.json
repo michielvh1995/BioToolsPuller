@@ -1,0 +1,217 @@
+{
+  "recipes" : {
+    "inserter-alt" : {
+      "inputs"      : [{
+             "amount": 1,
+             "label": "input1",
+             "name" : "burner-inserter",
+             "type" : "burner-inserter" },
+           { "amount": 1,
+             "label": "input2",
+             "name" : "electronic-circuit",
+             "type" : "electronic-circuit" }
+      ],
+      "outputs"     : [{"amount": 1,
+                    "label": "output1",
+                    "name": "inserter",
+                    "type": "inserter"}],
+      "name"        : "burner-inserter-upgrade",
+      "description" : "Alternative recipe for inserter",
+      "alternative" : true,
+      "id"          : "burner-inserter-upgrade"
+    },
+
+    "electric-mining-drill-alt" : {
+      "name"        : "burner-mining-drill-upgrade",
+      "id"          : "burner-mining-drill-upgrade",
+      "description" : "Alternative recipe for electric-mining-drill",
+      "alternative" : true,
+
+      "inputs": [{"amount": 3,
+                 "label": "input1",
+                 "name": "electronic-circuit",
+                 "type": "electronic-circuit"},
+                {"amount": 1,
+                 "label": "input2",
+                 "name": "burner-mining-drill",
+                 "type": "burner-mining-drill"}],
+      "outputs": [{"amount": 1,
+                  "label": "output1",
+                  "name": "electric-mining-drill",
+                  "type": "electric-mining-drill"}]}
+    },
+    "small-electric-pole-upgrade": {
+        "inputs": [
+            {
+                "amount": 3,
+                "type": "small-electric-pole",
+                "name": "small-electric-pole",
+                "label": "input1"
+            },
+            {
+                "amount": 3,
+                "type": "steel-plate",
+                "name": "steel-plate",
+                "label": "input2"
+            }
+        ],
+        "description": "Alternative recipe for small-electric-pole",
+        "outputs": [
+            {
+                "amount": 1,
+                "type": "medium-electric-pole",
+                "name": "medium-electric-pole",
+                "label": "output1"
+            }
+        ],
+        "alternative": true,
+        "id": "small-electric-pole-upgrade",
+        "name": "small-electric-pole-upgrade"
+    },
+    "iron-chest-upgrade": {
+        "alternative": true,
+        "description": "Alternative recipe for iron-chest",
+        "id": "iron-chest-upgrade",
+        "inputs": [
+            {
+                "amount": 5,
+                "label": "input1",
+                "name": "iron-chest",
+                "type": "iron-chest"
+            },
+            {
+                "amount": 4,
+                "label": "input2",
+                "name": "steel-plate",
+                "type": "steel-plate"
+            }
+        ],
+        "name": "iron-chest-upgrade",
+        "outputs": [
+            {
+                "amount": 1,
+                "label": "output1",
+                "name": "steel-chest",
+                "type": "steel-chest"
+            }
+        ]
+    },
+    "wooden-chest-upgrade": {
+        "alternative": true,
+        "description": "Alternative recipe for wooden-chest",
+        "id": "wooden-chest-upgrade",
+        "inputs": [
+            {
+                "amount": 3,
+                "label": "input1",
+                "name": "wooden-chest",
+                "type": "wooden-chest"
+            },
+            {
+                "amount": 2,
+                "label": "input2",
+                "name": "iron-plate",
+                "type": "iron-plate"
+            }
+        ],
+        "name": "wooden-chest-upgrade",
+        "outputs": [
+            {
+                "amount": 1,
+                "label": "output1",
+                "name": "iron-chest",
+                "type": "iron-chest"
+            }
+        ]
+    },
+    "stone-furnace-upgrade": {
+        "alternative": true,
+        "description": "Alternative recipe for strone-furnace",
+        "id": "stone-furnace-upgrade",
+        "inputs": [
+            {
+                "amount": 5,
+                "label": "input1",
+                "name": "stone-furnace",
+                "type": "stone-furnace"
+            },
+            {
+                "amount": 2,
+                "label": "input2",
+                "name": "steel-plate",
+                "type": "steel-plate"
+            }
+        ],
+        "name": "stone-furnace-upgrade",
+        "outputs": [
+            {
+                "amount": 1,
+                "label": "output1",
+                "name": "steel-furnace",
+                "type": "steel-furnace"
+            }
+        ]
+    },
+    "burner-mining-drill-upgrade": {
+        "alternative": true,
+        "description": "Alternative recipe for burner-mining-drill",
+        "id": "burner-mining-drill-upgrade",
+        "inputs": [
+            {
+                "amount": 5,
+                "label": "input1",
+                "name": "burner-mining-drill",
+                "type": "burner-mining-drill"
+            },
+            {
+                "amount": 2,
+                "label": "input2",
+                "name": "electronic-circuit",
+                "type": "electronic-circuit"
+            }
+        ],
+        "name": "burner-mining-drill-upgrade",
+        "outputs": [
+            {
+                "amount": 1,
+                "label": "output1",
+                "name": "electric-mining-drill",
+                "type": "electric-mining-drill"
+            }
+        ]
+    },
+    "steel-furnace-upgrade": {
+        "alternative": true,
+        "description": "Alternative recipe for steel-furnace",
+        "id": "steel-furnace-upgrade",
+        "inputs": [
+            {
+                "amount": 4,
+                "label": "input1",
+                "name": "steel-furnace",
+                "type": "steel-furnace"
+            },
+            {
+                "amount": 4,
+                "label": "input2",
+                "name": "steel-plate",
+                "type": "steel-plate"
+            },
+            {
+                "amount": 2,
+                "label": "input3",
+                "name": "processing-unit",
+                "type": "processing-unit"
+            }
+        ],
+        "name": "steel-furnace-upgrade",
+        "outputs": [
+            {
+                "amount": 1,
+                "label": "output1",
+                "name": "electric-furnace",
+                "type": "electric-furnace"
+            }
+        ]
+    }
+}

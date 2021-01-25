@@ -1,0 +1,17 @@
+{
+   u'description': u'data by a column and perform aggregate operation on other columns.',
+   u'edam_operations': [],
+   u'edam_topics': [],
+   u'form_style': u'regular',
+   u'hidden': u'',
+   u'is_workflow_compatible': True,
+   u'labels': [],
+   u'model_class': u'Tool',
+   u'panel_section_id': u'join__subtract_and_group',
+   u'panel_section_name': u'Join, Subtract and Group',
+   u'xrefs': [],
+
+   u'id': u'Grouping1',
+   u'name': u'Group',
+   u'version': u'2.1.4',
+ }
