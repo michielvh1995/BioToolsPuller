@@ -1,22 +1,13 @@
-import re
 import requests
-import json
 
-# Pretty printing
-from pprint import pprint
+class Requester:
+  def __init__(self, URL = "https://bio.tools/api/tool/"):
+      """ Inputs: URL : string : The URL at which location the bio.tools API is located
+                                 By default this is the current URL
+      """
+      self.URL = URL
 
-# Biotools and galaxy
-from tools.biotools import BTRequestBuilder
-
-# ========================================================================= #
-# =============================== Constants =============================== #
-# ========================================================================= #
-
-
-# The bio.tools API
-URL = "https://bio.tools/api/tool/"
-
-def Shorten(data, fields):
+  def FilterFields(self, data, fields):
     """ Reduce the data to specific fields
     """
     r = []
@@ -25,21 +16,21 @@ def Shorten(data, fields):
       
       # Filter the fields
       for i in fields:
-        ret[i] = data[i]
+        ret[i] = d[i]
       
       # Append it to the list again
       r.append(ret)
 
     return r
 
-def Request(payload, page = "?page=1"):
+  def Request(self, payload, page = "?page=1"):
     """ Request the tools given a dictionary of constraints
     Returns:
         a dictionary with keys: count, previous, list, next
     """
     
     # Request the data
-    ans = requests.get(url=URL+page, params=payload)
+    ans = requests.get(url = self.URL + page, params=payload)
 
     # Extract the data in the given format
     if payload['format'] == "json":
@@ -51,7 +42,7 @@ def Request(payload, page = "?page=1"):
 
     return ans
 
-def RequestAll(payload, fields = None):
+  def RequestAll(self, payload, fields = None):
     """ Get the tooldata from all pages
     Returns:
         a tuple dictionary with keys "count" and "list"
@@ -65,7 +56,7 @@ def RequestAll(payload, fields = None):
 
     while page:
        # Perform the requests
-       ret = Request(payload, page)
+       ret = self.Request(payload, page)
 
        # Update the page URL
        page = ret["next"]
@@ -75,19 +66,4 @@ def RequestAll(payload, fields = None):
 
     return {'count': len(lst), 'list': lst}
 
-
-# Set the payload to be requested
-payload = {
-          'format': 'json',
-          'collectionID' : 'emboss',
-        }
-
-
-# count, previous, list, next
-print(len(Request(payload)["list"]))
-
-print(len(RequestAll(payload)["list"]))
-
-# Now that we have the toolset, we export it as a json!
-# And after that we can turn it into a .cpp file
 
