@@ -10,7 +10,7 @@ import src.extractor as Extractor
 # Set the payload to be requested
 payload = {
           'format': 'json',
-          'collectionID' : 'emboss',
+          'collectionID' : 'fasta',
         }
 
 # Reduce the fields to those which are relevant:
@@ -25,14 +25,16 @@ fields = [
 
 # Create requester object and get the data
 req = Requester()
-emboss = req.RequestAll(payload)["list"]
-emboss = req.FilterFields(emboss, fields)
+fasta = req.RequestAll(payload)["list"]
+fasta = req.FilterFields(fasta, fields)
 
 # Now we have to unpack the data to our format and mold it into a dictionary
-emboss = { 'emboss' : 
-           { e["id"] : Extractor.RenameFields(e) for e in emboss }
+fasta = { 'fasta' : 
+           { e["id"] : Extractor.RenameFields(e) for e in fasta }
         }
 
-with open("emboss.json", "w+") as fil:
-   json.dump(emboss, fil, sort_keys=True, indent=4)
+print("Retrieved ", len(fasta["fasta"]), " tools")
+
+with open("fasta.json", "w+") as fil:
+   json.dump(fasta, fil, sort_keys=True, indent=4)
 

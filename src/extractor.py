@@ -56,7 +56,10 @@ def RenameFields(tool):
         tool[oldNewPairs[pk]] = tool.pop(pk)
 
     # We turn the version number from a list to a value:
-    tool["version"] = tool["version"][0]
+    if len(tool["version"]) > 0:
+        tool["version"] = tool["version"][0]
+    else:
+        tool["version"] = "n/a"
 
     # We also have to turn the type of tool into just "tool", due to programmatic constraints
     tool["type"] = "tool"
